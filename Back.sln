@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{2FF08166-5B0D-46E0-A220-B430EC252831}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebApi\WebAPI.csproj", "{79A53F89-196D-4D9F-9B92-CF66E6451605}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spotify", "Spotify\Spotify.csproj", "{747DD582-1BF7-4DFC-BF31-54EA456B0845}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenWeatherMap", "OpenWeatherMap\OpenWeatherMap.csproj", "{4450B275-DE25-41D6-BF15-BFD2DCFB67F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FF08166-5B0D-46E0-A220-B430EC252831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FF08166-5B0D-46E0-A220-B430EC252831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FF08166-5B0D-46E0-A220-B430EC252831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FF08166-5B0D-46E0-A220-B430EC252831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79A53F89-196D-4D9F-9B92-CF66E6451605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79A53F89-196D-4D9F-9B92-CF66E6451605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79A53F89-196D-4D9F-9B92-CF66E6451605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79A53F89-196D-4D9F-9B92-CF66E6451605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{747DD582-1BF7-4DFC-BF31-54EA456B0845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{747DD582-1BF7-4DFC-BF31-54EA456B0845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{747DD582-1BF7-4DFC-BF31-54EA456B0845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{747DD582-1BF7-4DFC-BF31-54EA456B0845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4450B275-DE25-41D6-BF15-BFD2DCFB67F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4450B275-DE25-41D6-BF15-BFD2DCFB67F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4450B275-DE25-41D6-BF15-BFD2DCFB67F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4450B275-DE25-41D6-BF15-BFD2DCFB67F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7A597E8-05AB-4A06-91E4-04CB29FBC7D0}
+	EndGlobalSection
+EndGlobal
