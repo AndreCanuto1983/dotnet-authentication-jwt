@@ -50,17 +50,17 @@ namespace WebAPI
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddTransient<IRepository<Notes>, NotesRepository>();
-            services.AddTransient<IGenerateToken, GenerateToken>();
-            services.AddTransient<IGetWeatherInfo<WeatherInfo>, WeatherInfoService>();
-            services.AddTransient<IGetResponseApiExternal<string>, SpotifyRequest>();
-            services.AddTransient<IGetExternalToken, GetSpotifyToken>();
-            services.AddTransient<IGetResponseApiExternal<string>, SpotifyRequest>();      
-            services.AddTransient<IGetIdPlaylist<string, double>, GetIdPlaylistSpotfy>();      
-            services.AddTransient<IGetPlaylist<string, double>, GetPlaylistSpotifyForOpenInBrowser>();
-            services.AddTransient<UserBackViewModel, UserBackViewModel>();
-            services.AddTransient<UserLoginBackViewModel, UserLoginBackViewModel>();
-            services.AddTransient<Page, Page>();
+            services.AddScoped<IRepository<Notes>, NotesRepository>();
+            services.AddScoped<IGenerateToken, GenerateToken>();
+            services.AddScoped<IGetWeatherInfo<WeatherInfo>, WeatherInfoService>();
+            services.AddScoped<IGetResponseApiExternal<string>, SpotifyRequest>();
+            services.AddScoped<IGetExternalToken, GetSpotifyToken>();
+            services.AddScoped<IGetResponseApiExternal<string>, SpotifyRequest>();      
+            services.AddScoped<IGetIdPlaylist<string, double>, GetIdPlaylistSpotfy>();      
+            services.AddScoped<IGetPlaylist<string, double>, GetPlaylistSpotifyForOpenInBrowser>();
+            services.AddScoped<UserBackViewModel, UserBackViewModel>();
+            services.AddScoped<UserLoginBackViewModel, UserLoginBackViewModel>();
+            services.AddScoped<Page, Page>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();            
 
