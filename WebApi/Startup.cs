@@ -1,4 +1,3 @@
-using Core.Interfaces;
 using Core.Models.Base;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -10,21 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
-using OpenWeatherMap.Interface;
-using OpenWeatherMap.Models;
-using OpenWeatherMap.Services;
-using Spotify.Interfaces;
-using Spotify.Services;
 using System.Text;
 using WebAPI.Config;
 using WebAPI.Context;
-using WebAPI.Interfaces;
-using WebAPI.Models.NoteModel;
 using WebAPI.Models.AccessModels;
-using WebAPI.Repository;
-using WebAPI.Services.Token;
-using WebAPI.ViewModels.UserViewModels;
-using Spotify.Models;
 
 namespace WebAPI
 {
@@ -42,25 +30,14 @@ namespace WebAPI
             // Configurando o acesso ao bd
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            //cria e utiliza o context na memória, qdo a requisição terminar ele limpa o context da memória.
+                        
             services.AddScoped<ApplicationDbContext, ApplicationDbContext>();
 
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddScoped<IRepository<Notes>, NotesRepository>();
-            services.AddScoped<IGenerateToken, GenerateToken>();
-            services.AddScoped<IGetWeatherInfo<WeatherInfo>, WeatherInfoService>();
-            services.AddScoped<IGetResponseApiExternal<string>, SpotifyRequest>();
-            services.AddScoped<IGetExternalToken, GetSpotifyToken>();
-            services.AddScoped<IGetResponseApiExternal<string>, SpotifyRequest>();      
-            services.AddScoped<IGetIdPlaylist<string, double>, GetIdPlaylistSpotfy>();      
-            services.AddScoped<IGetPlaylist<string, double>, GetPlaylistSpotifyForOpenInBrowser>();
-            services.AddScoped<UserBackViewModel, UserBackViewModel>();
-            services.AddScoped<UserLoginBackViewModel, UserLoginBackViewModel>();
-            services.AddScoped<Page, Page>();
+            services.Configuration();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();            
 
