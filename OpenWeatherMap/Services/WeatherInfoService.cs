@@ -5,7 +5,7 @@ using System.Net;
 
 namespace OpenWeatherMap.Services
 {
-    public class WeatherInfoService : IGetWeatherInfo<WeatherInfo>
+    public class WeatherInfoService : IWeatherInfoService<WeatherInfo>
     {
         public WeatherInfo GetWeatherInfo(string city, string appId = "27b5237d944993ebfe0a90cb000f38f1")
         {   

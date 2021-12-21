@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
     {
         #region Dependency Injection
 
-        private readonly IGetWeatherInfo<WeatherInfo> _weatherInfo;
+        private readonly IWeatherInfoService<WeatherInfo> _weatherInfo;
         private readonly IGetIdPlaylist<string, double> _playlistGetId;
         private readonly IGetResponseApiExternal<string> _spotifyRequest;
         private readonly IGetPlaylist<string, double> _playlist;
@@ -33,7 +33,7 @@ namespace WebAPI.Controllers
 
         public SpotifyTracksSuggestionController(
            UserManager<User> userManager,
-           IGetWeatherInfo<WeatherInfo> weatherInfo,
+           IWeatherInfoService<WeatherInfo> weatherInfo,
            IGetResponseApiExternal<string> spotifyRequest,
            IGetIdPlaylist<string, double> playlistGetId,
            IGetPlaylist<string, double> playlist,

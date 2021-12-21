@@ -20,7 +20,7 @@ namespace WebAPI.Config
         {
             services.AddScoped<IRepository<Notes>, NotesRepository>();
             services.AddScoped<IGenerateToken, GenerateToken>();
-            services.AddScoped<IGetWeatherInfo<WeatherInfo>, WeatherInfoService>();
+            services.AddScoped<IWeatherInfoService<WeatherInfo>, WeatherInfoService>();
             services.AddScoped<IGetResponseApiExternal<string>, SpotifyRequest>();
             services.AddScoped<IGetExternalToken, GetSpotifyToken>();
             services.AddScoped<IGetResponseApiExternal<string>, SpotifyRequest>();
