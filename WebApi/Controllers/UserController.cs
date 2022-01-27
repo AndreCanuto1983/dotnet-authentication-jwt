@@ -94,7 +94,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -119,7 +119,7 @@ namespace WebAPI.Controllers
 
                 if (result.Succeeded) return Ok(_responseLogin);
 
-                return BadRequest("Usuário ou Senha inválidos.");
+                return BadRequest();
             }
             catch (CustomErrorException ex)
             {
@@ -127,7 +127,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -173,7 +173,7 @@ namespace WebAPI.Controllers
 
                     if (result.Succeeded)
                     {
-                        return Ok("Password reset successfully.");
+                        return Ok();
                     }
                 }
 
@@ -185,7 +185,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -222,7 +222,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
     }

@@ -55,11 +55,11 @@ namespace WebAPI.Controllers
                 var user = await _userManager.FindByEmailAsync(_accessor.HttpContext.User.Identity.Name);
 
                 if (user == null || user.IsDeleted)
-                    return StatusCode(401, "Acesso inválido");
+                    return Unauthorized();
 
                 await _notesRepository.InsertUpdate(model.PersonalNotes?.Select(p => p.NotesFront2Entity()).ToList(), user.Id);
 
-                return Created("", "Registro(s) criado(s) com sucesso.");
+                return Created("", "");
             }
             catch (CustomErrorException ex)
             {
@@ -67,7 +67,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -91,11 +91,11 @@ namespace WebAPI.Controllers
                 var user = await _userManager.FindByEmailAsync(_accessor.HttpContext.User.Identity.Name);
 
                 if (user == null || user.IsDeleted)
-                    return StatusCode(401, "Acesso inválido");
+                    return Unauthorized();                    
 
                 await _notesRepository.InsertUpdate(model.PersonalNotes?.Select(p => p.NotesFront2Entity()).ToList(), user.Id);
 
-                return Ok("Registro(s) atualizado com sucesso!");
+                return Ok();
             }
             catch (CustomErrorException ex)
             {
@@ -103,7 +103,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -122,7 +122,7 @@ namespace WebAPI.Controllers
                 var user = await _userManager.FindByEmailAsync(_accessor.HttpContext.User.Identity.Name);
 
                 if (user == null || user.IsDeleted)
-                    return StatusCode(401, "Acesso inválido");
+                    return Unauthorized();
 
                 var result = await _notesRepository.GetList(id, user.Id);
 
@@ -134,7 +134,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -153,7 +153,7 @@ namespace WebAPI.Controllers
                 var user = await _userManager.FindByEmailAsync(_accessor.HttpContext.User.Identity.Name);
 
                 if (user == null || user.IsDeleted)
-                    return StatusCode(401, "Acesso inválido");
+                    return Unauthorized();
 
                 var result = await _notesRepository.GetList(0, user.Id);
 
@@ -165,7 +165,7 @@ namespace WebAPI.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -184,11 +184,11 @@ namespace WebAPI.Controllers
                 var user = await _userManager.FindByEmailAsync(_accessor.HttpContext.User.Identity.Name);
 
                 if (user == null || user.IsDeleted)
-                    return StatusCode(401, "Acesso inválido");
+                    return Unauthorized();
 
                 await _notesRepository.Delete(id, user.Id);
 
-                return Ok("Registro excluído com sucesso.");
+                return Ok();
             }
             catch (CustomErrorException ex)
             {
