@@ -1,4 +1,5 @@
 ﻿using Core.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.DependencyInjection;
 using OpenWeatherMap.Interface;
@@ -14,10 +15,11 @@ using WebAPI.ViewModels.UserViewModels;
 
 namespace WebAPI.Config
 {
-    public static class ConfigurationServices
+    public static class ServiceExtensions
     {
-        public static void Configuration(this IServiceCollection services)
+        public static void InterfaceConfiguration(this IServiceCollection services)
         {
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IRepository<Notes>, NotesRepository>();
             services.AddScoped<IGenerateToken, GenerateToken>();
             services.AddScoped<IWeatherInfoService<WeatherInfo>, WeatherInfoService>();

@@ -13,7 +13,10 @@ namespace WebAPI.Services.Token
 {
     public class GenerateToken : IGenerateToken
     {
-        public async Task<string> GenerateJwt(string email, UserManager<User> userManager, AppSettings appSettings)
+        public async Task<string> GenerateJwt(
+            string email,
+            UserManager<User> userManager,
+            AppSettings appSettings)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var identityClaims = new ClaimsIdentity();
@@ -25,7 +28,7 @@ namespace WebAPI.Services.Token
             //outra maneira de fazer
             var _subject = new ClaimsIdentity(new Claim[]
             {
-                new Claim(ClaimTypes.Name, user.Email)                        
+                new Claim(ClaimTypes.Name, user.Email)
             });
 
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
