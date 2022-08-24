@@ -1,22 +1,16 @@
 using Core.Exceptions;
-using Core.Interfaces;
 using Core.Models.Base;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using OpenWeatherMap.Interface;
-using OpenWeatherMap.Models;
-using Spotify.Interfaces;
-using Spotify.Models;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 using WebAPI.FronViewModels.UserViewModels;
 using WebAPI.Interfaces;
 using WebAPI.Models.AccessModels;
-using WebAPI.Models.NoteModel;
 using WebAPI.ViewModels.UserViewModels;
 
 namespace WebAPI.Controllers
